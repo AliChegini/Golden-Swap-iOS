@@ -19,8 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let controller = ViewController()
-        window?.rootViewController = controller
+        let layout = UICollectionViewFlowLayout()
+        let navBar = UINavigationController(rootViewController: ListItemsViewController(collectionViewLayout: layout))
+        window?.rootViewController = navBar
         
         return true
     }

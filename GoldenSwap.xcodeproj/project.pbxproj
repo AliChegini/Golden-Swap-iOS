@@ -8,10 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		7C8999BE2383F4E7003DB289 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8999BD2383F4E7003DB289 /* AppDelegate.swift */; };
-		7C8999C22383F4E7003DB289 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8999C12383F4E7003DB289 /* ViewController.swift */; };
 		7C8999C72383F4E9003DB289 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C8999C62383F4E9003DB289 /* Assets.xcassets */; };
 		7C8999CA2383F4E9003DB289 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C8999C82383F4E9003DB289 /* LaunchScreen.storyboard */; };
 		7C8999D52383F4E9003DB289 /* GoldenSwapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8999D42383F4E9003DB289 /* GoldenSwapTests.swift */; };
+		7C8999F22383FF1E003DB289 /* ListItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8999EC2383FF1E003DB289 /* ListItemsPresenter.swift */; };
+		7C8999F42383FF1E003DB289 /* ListItemsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8999EE2383FF1E003DB289 /* ListItemsRouter.swift */; };
+		7C8999F52383FF1E003DB289 /* ListItemsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8999EF2383FF1E003DB289 /* ListItemsModels.swift */; };
+		7C8999F62383FF1E003DB289 /* ListItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8999F02383FF1E003DB289 /* ListItemsViewController.swift */; };
+		7C8999F72383FF1E003DB289 /* ListItemsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8999F12383FF1E003DB289 /* ListItemsInteractor.swift */; };
+		7C8999F9238404B2003DB289 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8999F8238404B2003DB289 /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,13 +32,18 @@
 /* Begin PBXFileReference section */
 		7C8999BA2383F4E7003DB289 /* GoldenSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C8999BD2383F4E7003DB289 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7C8999C12383F4E7003DB289 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7C8999C62383F4E9003DB289 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C8999C92383F4E9003DB289 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C8999CB2383F4E9003DB289 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C8999D02383F4E9003DB289 /* GoldenSwapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldenSwapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C8999D42383F4E9003DB289 /* GoldenSwapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenSwapTests.swift; sourceTree = "<group>"; };
 		7C8999D62383F4E9003DB289 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C8999EC2383FF1E003DB289 /* ListItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemsPresenter.swift; sourceTree = "<group>"; };
+		7C8999EE2383FF1E003DB289 /* ListItemsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemsRouter.swift; sourceTree = "<group>"; };
+		7C8999EF2383FF1E003DB289 /* ListItemsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemsModels.swift; sourceTree = "<group>"; };
+		7C8999F02383FF1E003DB289 /* ListItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemsViewController.swift; sourceTree = "<group>"; };
+		7C8999F12383FF1E003DB289 /* ListItemsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemsInteractor.swift; sourceTree = "<group>"; };
+		7C8999F8238404B2003DB289 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +85,8 @@
 		7C8999BC2383F4E7003DB289 /* GoldenSwap */ = {
 			isa = PBXGroup;
 			children = (
+				7C8999DF2383F70D003DB289 /* ListItems */,
 				7C8999BD2383F4E7003DB289 /* AppDelegate.swift */,
-				7C8999C12383F4E7003DB289 /* ViewController.swift */,
 				7C8999C62383F4E9003DB289 /* Assets.xcassets */,
 				7C8999C82383F4E9003DB289 /* LaunchScreen.storyboard */,
 				7C8999CB2383F4E9003DB289 /* Info.plist */,
@@ -91,6 +101,19 @@
 				7C8999D62383F4E9003DB289 /* Info.plist */,
 			);
 			path = GoldenSwapTests;
+			sourceTree = "<group>";
+		};
+		7C8999DF2383F70D003DB289 /* ListItems */ = {
+			isa = PBXGroup;
+			children = (
+				7C8999F8238404B2003DB289 /* ItemCell.swift */,
+				7C8999F02383FF1E003DB289 /* ListItemsViewController.swift */,
+				7C8999F12383FF1E003DB289 /* ListItemsInteractor.swift */,
+				7C8999EC2383FF1E003DB289 /* ListItemsPresenter.swift */,
+				7C8999EF2383FF1E003DB289 /* ListItemsModels.swift */,
+				7C8999EE2383FF1E003DB289 /* ListItemsRouter.swift */,
+			);
+			path = ListItems;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +216,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C8999C22383F4E7003DB289 /* ViewController.swift in Sources */,
+				7C8999F52383FF1E003DB289 /* ListItemsModels.swift in Sources */,
+				7C8999F42383FF1E003DB289 /* ListItemsRouter.swift in Sources */,
+				7C8999F62383FF1E003DB289 /* ListItemsViewController.swift in Sources */,
+				7C8999F72383FF1E003DB289 /* ListItemsInteractor.swift in Sources */,
+				7C8999F9238404B2003DB289 /* ItemCell.swift in Sources */,
+				7C8999F22383FF1E003DB289 /* ListItemsPresenter.swift in Sources */,
 				7C8999BE2383F4E7003DB289 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
