@@ -24,6 +24,8 @@ class ItemCell: UICollectionViewCell {
         let imageView = UIImageView()
          imageView.translatesAutoresizingMaskIntoConstraints = false
          imageView.image = UIImage(named: "gold")
+         imageView.contentMode = .scaleAspectFill
+         imageView.clipsToBounds = true
     
         return imageView
     }()
@@ -32,7 +34,11 @@ class ItemCell: UICollectionViewCell {
     let userProfileImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .blue
+        imageView.image = UIImage(named: "elon")
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 25
+        imageView.layer.masksToBounds = true
         
        return imageView
     }()
@@ -41,8 +47,7 @@ class ItemCell: UICollectionViewCell {
     let titleLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        //label.text = "Hello World!"
-        label.backgroundColor = .red
+        label.text = "Demo Rocket"
         
         return label
     }()
@@ -51,8 +56,9 @@ class ItemCell: UICollectionViewCell {
     let subtitleTextView: UITextView = {
        let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
-        //textView.text = "Hello World!"
-        textView.backgroundColor = .yellow
+        textView.text = "Elon • 100 views • 2 years ago"
+        textView.textColor = .lightGray
+        textView.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 0)
         textView.isEditable = false
         
         return textView
@@ -72,7 +78,7 @@ class ItemCell: UICollectionViewCell {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[v0(50)]", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": userProfileImageView]))
         
         // vertical rules
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-16-[v0]-8-[v1(50)]-8-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": thumbnailImageView, "v1": userProfileImageView]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-16-[v0]-8-[v1(50)]-16-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": thumbnailImageView, "v1": userProfileImageView]))
         
         // --------
         // top constraints for label
@@ -90,7 +96,7 @@ class ItemCell: UICollectionViewCell {
         
         // --------
         // top constraints for subtitleTextView
-        addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .top, relatedBy: .equal, toItem: titleLabel, attribute: .bottom, multiplier: 1, constant: 8))
+        addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .top, relatedBy: .equal, toItem: titleLabel, attribute: .bottom, multiplier: 1, constant: 4))
         
         // left constraints for label
         addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .left, relatedBy: .equal, toItem: userProfileImageView, attribute: .right, multiplier: 1, constant: 8))
@@ -99,9 +105,8 @@ class ItemCell: UICollectionViewCell {
         addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .right, relatedBy: .equal, toItem: thumbnailImageView, attribute: .right, multiplier: 1, constant: 0))
         
         // height constraint for label
-        addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
+        addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 30))
 
     }
-    
     
 }
