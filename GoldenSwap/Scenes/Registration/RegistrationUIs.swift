@@ -10,12 +10,25 @@ import UIKit
 
 class RegistrationUIs: UIView {
     
-    let phoneNumberTextField: UITextField = {
+    let userNameTextField: UITextField = {
        let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = .white
         textField.layer.cornerRadius = 25
-        textField.placeholder = "  +31 1234567"
+        textField.placeholder = "Username"
+        textField.textAlignment = .center
+        
+        return textField
+    }()
+    
+    
+    let passwordTextField: UITextField = {
+       let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.backgroundColor = .white
+        textField.layer.cornerRadius = 25
+        textField.placeholder = "Password"
+        textField.textAlignment = .center
         
         return textField
     }()
@@ -26,7 +39,7 @@ class RegistrationUIs: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Submit", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .yellow
+        button.backgroundColor = .green
         button.layer.cornerRadius = 20
         button.addTarget(self, action: #selector(submitAction), for: .touchUpInside)
         
@@ -40,19 +53,25 @@ class RegistrationUIs: UIView {
     
     
     func setupViews(view: UIView) {
-        view.addSubview(phoneNumberTextField)
+        view.addSubview(userNameTextField)
+        view.addSubview(passwordTextField)
         view.addSubview(submitButton)
         
         NSLayoutConstraint.activate([
-            phoneNumberTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            phoneNumberTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            phoneNumberTextField.heightAnchor.constraint(equalToConstant: 50),
-            phoneNumberTextField.widthAnchor.constraint(equalToConstant: 250),
+            userNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            userNameTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+            userNameTextField.heightAnchor.constraint(equalToConstant: 50),
+            userNameTextField.widthAnchor.constraint(equalToConstant: 250),
+            
+            passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            passwordTextField.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor, constant: 20),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 50),
+            passwordTextField.widthAnchor.constraint(equalToConstant: 250),
             
             submitButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             submitButton.heightAnchor.constraint(equalToConstant: 40),
             submitButton.widthAnchor.constraint(equalToConstant: 100),
-            submitButton.topAnchor.constraint(equalTo: phoneNumberTextField.bottomAnchor, constant: 40),
+            submitButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 40),
             
         ])
         

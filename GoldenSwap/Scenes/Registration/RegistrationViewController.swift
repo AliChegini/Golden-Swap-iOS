@@ -12,6 +12,7 @@
 //
 
 import UIKit
+import CryptoKit
 
 protocol RegistrationDisplayable: class {
     //func displaySomething(viewModel: RegistrationModels.ViewModel)
@@ -29,15 +30,22 @@ class RegistrationViewController: UIViewController, RegistrationDisplayable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
-        
+        view.backgroundColor = .yellow
         uiElements.setupViews(view: view)
         
+        let tap: UIGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    
+    }
+    
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     
     @objc func submitAction() {
-        if let phoneNumber = uiElements.phoneNumberTextField.text {
+        if let phoneNumber = uiElements.userNameTextField.text {
             // continue here
             // send the number to server
             // serveruse the numberr and send a sms consist of 4 digit code
